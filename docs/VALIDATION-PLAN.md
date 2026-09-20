@@ -10,6 +10,14 @@ Test whether the tracking and escalation failure is repeated across real
 applicants and whether the current golden journey helps without collecting
 sensitive identifiers.
 
+## Desk-research boundary
+
+The participant's household account and published applicant cases strengthen
+the problem evidence, but they do not replace the three sessions below. The
+participant's father may be recorded as P1 only after fresh consent, the
+interview questions and the prototype task are completed. Do not copy online
+comments into P1–P3 records.
+
 ## Recruit three contrasting applicants
 
 1. One person currently waiting for a licence or renewal.
