@@ -2,7 +2,8 @@
 
 ## Repository
 
-- [ ] Public repository and stable deployment
+- [ ] Public repository before submission
+- [x] Stable deployment: https://civicrouteng.vercel.app/
 - [ ] Problem, user, track and value proposition
 - [ ] Local setup and test instructions
 - [ ] Architecture and trust model
@@ -23,7 +24,7 @@
 ## Submission assets
 
 - [ ] Replace the validation evidence slot in `SUBMISSION-SUMMARY.md`
-- [ ] Add the stable deployment URL to the README and demo closing frame
+- [x] Add the stable deployment URL to the README and demo closing frame
 - [ ] Export the pitch deck as PDF and verify every page
 - [ ] Record the demo using `DEMO-SCRIPT.md`
 - [ ] Save a complete submission before optional final polish

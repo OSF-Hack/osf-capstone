@@ -2,6 +2,8 @@
 
 A trustworthy, actionable civic-information proof of concept in the **Transparency & Accountability** track.
 
+**Live application:** [civicrouteng.vercel.app](https://civicrouteng.vercel.app/)
+
 ## Current status
 
 The first service pack addresses a participant-observed problem in Nigeria's federal driver's licence process: applicants may not know how to track an application or escalate when tracking is unavailable, unclear, or stalled.

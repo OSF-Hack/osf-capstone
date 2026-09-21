@@ -52,7 +52,7 @@ The same trust model can support other public services through reviewed service
 packs, without building a parallel government database. CivicRoute NG turns
 fragmented information into one safe, verified next action.”
 
-End on the project name and repository/deployment links.
+End on the project name, `civicrouteng.vercel.app`, and the repository link.
 
 ## Recording checklist
 
