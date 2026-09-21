@@ -14,6 +14,20 @@ The strongest differentiator is not another application or status database.
 It is an independent, privacy-minimising navigation and evidence layer across a
 fragmented multi-agency journey.
 
+## Current applicant validation
+
+The 21 September survey recorded eight responses. Five respondents confirmed
+direct driver's licence experience and consented to anonymous use. Three of
+the five reported four or more centre visits, three reported repeated
+transport expenses, and three described biometric or capture friction. All
+five requested at least one traceable handling signal such as a reference
+number, written resolution, response timeframe, named next step or SMS/email
+confirmation.
+
+This small convenience sample covered Kaduna, Niger and Plateau. It supports
+the problem and current product boundaries, but it does not establish national
+prevalence or prototype usability.
+
 ## Evidence stack
 
 | Layer | Evidence | What it supports | Boundary |

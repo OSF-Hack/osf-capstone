@@ -30,11 +30,11 @@ Deadline: 21 September 2026 at 23:59 UTC. Internal submission target: 21 Septemb
 | 3 | Idea-neutral technical foundation | Complete |
 | 4 | Official source research | Complete |
 | 5 | Tracking and escalation golden journey | Complete |
-| 6 | Three short applicant validations | Current |
-| 7 | Anonymous discrepancy reporting | Pending |
+| 6 | Applicant problem validation | Complete: 5 eligible responses |
+| 7 | Anonymous discrepancy reporting | Complete: local-only pilot |
 | 8 | Hausa localisation | Pending |
-| 9 | Offline/PWA functionality | Pending |
-| 10 | Accessibility and mobile QA | Pending |
-| 11 | Deployment and README polish | Pending |
-| 12 | Demo, pitch deck and written summary | Pending |
+| 9 | Offline/PWA functionality | Complete: offline-after-first-visit pilot |
+| 10 | Accessibility and mobile QA | Current |
+| 11 | Deployment and README polish | Complete |
+| 12 | Demo, pitch deck and written summary | Current |
 | 13 | Final rubric audit and submission | Pending |

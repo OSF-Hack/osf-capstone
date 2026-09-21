@@ -51,8 +51,17 @@ high-friction public services. Each pack reuses the same source register,
 freshness policy, privacy rules, action-card pattern and discrepancy workflow
 without creating a new government database.
 
-## Validation evidence slot
+## Applicant validation
 
-Replace this section before submission with anonymous aggregate findings from
-at least three eligible respondents. Do not include identifying information or
-claim that survey participation tested prototype usability.
+Eight people responded to the validation survey. Five had personally applied
+for, renewed or reissued a Nigerian driver's licence and consented to anonymous
+use of their responses. Three of the five reported four or more physical
+return visits, three reported repeated transport expenses, and three described
+biometric or capture-related friction. Every eligible respondent named at
+least one traceable signal they would need to believe a complaint was being
+handled, including a reference number, written resolution, response timeframe,
+named next step or SMS/email confirmation.
+
+The sample covered Kaduna, Niger and Plateau and was not nationally
+representative. The survey validates the applicant problem, not prototype
+usability, because respondents did not complete an observed interface task.

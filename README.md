@@ -29,6 +29,15 @@ After the first successful visit, the service worker retains the application she
 - AI may simplify or translate evidence but cannot invent civic instructions.
 - The discrepancy-note pilot runs locally and does not upload or store a report.
 
+## Validation snapshot
+
+Five eligible and consenting applicants across Kaduna, Niger and Plateau
+contributed anonymous survey responses. Three reported four or more centre
+visits, three reported repeated transport expenses, and three described
+biometric or capture-related friction. All five named a traceable signal they
+would need to believe a complaint was being handled. See
+`docs/VALIDATION-FINDINGS.md` for the sample limitations and product decisions.
+
 ## Local setup
 
 This repository is tested with Node.js 24 and npm 11. If you use `nvm`, the
