@@ -60,8 +60,7 @@ h3 { margin: 0; font-size: 1.05rem; }
 .network-status { display: flex; align-items: center; gap: 0.45rem; margin: 0.9rem 0 0; color: var(--muted); font-size: 0.75rem; }
 .network-status span { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #1ba86f; box-shadow: 0 0 0 4px rgba(27, 168, 111, 0.1); }
 .network-status.is-offline span { background: var(--accent); }
-.hero-status { position: relative; padding: 1.35rem; border: 1px solid rgba(255,255,255,0.9); border-radius: 1.3rem; background: rgba(255,255,255,0.9); box-shadow: var(--shadow); transform: rotate(1deg); }
-.hero-status::before { content: ""; position: absolute; z-index: -1; inset: 2.1rem -1.1rem -1.1rem 2.1rem; border-radius: 1.3rem; background: #dfeae4; transform: rotate(-3deg); }
+.hero-status { position: relative; padding: 1.35rem; border: 1px solid rgba(255,255,255,0.9); border-radius: 1.3rem; background: rgba(255,255,255,0.96); box-shadow: 14px 16px 0 #dfeae4, var(--shadow); }
 .status-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .status-card-top > div { display: grid; gap: 0.25rem; }
 .mini-label { color: var(--muted); font-size: 0.67rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -161,7 +160,7 @@ footer > a { color: var(--primary); font-size: .78rem; font-weight: 850; }
 @media (prefers-reduced-motion: no-preference) {
   .button, .cards article, .masthead nav a { transition: .2s ease; }
   .hero-status { animation: enter-card .65s ease both; }
-  @keyframes enter-card { from { opacity: 0; transform: translateY(18px) rotate(1deg); } }
+  @keyframes enter-card { from { opacity: 0; transform: translateY(18px); } }
 }
 @media print {
   body { background: #fff; }
@@ -193,8 +192,7 @@ footer > a { color: var(--primary); font-size: .78rem; font-weight: 850; }
   .lede { font-size: 1rem; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .button, .text-link { text-align: center; }
-  .hero-status { width: calc(100% - .6rem); padding: 1rem; transform: none; }
-  .hero-status::before { inset: 1rem -.4rem -.5rem 1rem; }
+  .hero-status { width: calc(100% - .8rem); padding: 1rem; box-shadow: 8px 9px 0 #dfeae4, var(--shadow); }
   .status-card-top { align-items: stretch; flex-direction: column; }
   .secure-pill { width: fit-content; }
   .validation-strip { grid-template-columns: 1fr; }

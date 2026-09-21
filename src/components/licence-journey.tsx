@@ -226,7 +226,7 @@ export function LicenceJourney() {
           <p>Every material instruction is linked to its official origin and dated for review.</p>
           <span className="verified-stamp">✓ Current guidance: {driverLicenceGuide.status}</span>
         </div>
-        <details className="source-disclosure">
+        <details className="source-disclosure" open>
           <summary>View all {driverLicenceSources.length} official sources <span>＋</span></summary>
           <div className="source-list">
             {driverLicenceSources.map((source) => (
