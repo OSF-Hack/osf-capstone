@@ -20,6 +20,14 @@
 - [ ] Offline/low-bandwidth behaviour
 - [ ] Scaling through service packs
 
+## Submission assets
+
+- [ ] Replace the validation evidence slot in `SUBMISSION-SUMMARY.md`
+- [ ] Add the stable deployment URL to the README and demo closing frame
+- [ ] Export the pitch deck as PDF and verify every page
+- [ ] Record the demo using `DEMO-SCRIPT.md`
+- [ ] Save a complete submission before optional final polish
+
 ## Final quality gate
 
 - [ ] No invented civic information
@@ -27,4 +35,3 @@
 - [ ] No broken link or private asset
 - [ ] Fresh-browser and mobile test completed
 - [ ] Submission completed before 21 September 2026 at 18:00 UTC
-
