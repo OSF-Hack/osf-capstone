@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "CivicRoute NG — Verified driver's licence guidance",
   description: "Verified tracking and escalation guidance for Nigeria driver's licence applicants.",
   manifest: "/manifest.webmanifest",
+  icons: { icon: "/civicroute-mark.svg" },
 };
 
 export const viewport: Viewport = {

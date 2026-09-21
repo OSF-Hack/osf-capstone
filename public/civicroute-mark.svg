@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">CivicRoute NG</title>
+  <defs>
+    <linearGradient id="route-gradient" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18A77C"/>
+      <stop offset="1" stop-color="#075342"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#route-gradient)" d="M32 2 57 16.5v29L32 62 7 45.5v-29L32 2Z"/>
+  <path fill="#DDF8ED" d="M21.1 18.2a5.1 5.1 0 1 1 5.2 8.7v7.3c0 3.8 3 6.8 6.8 6.8h3.4l-3.3-3.3 3.7-3.7 9.6 9.6-9.6 9.6-3.7-3.7 3.3-3.3h-3.4A12.1 12.1 0 0 1 21 34.2v-7.3a5.1 5.1 0 0 1 .1-8.7Z"/>
+  <circle cx="21" cy="22" r="2.5" fill="#075342"/>
+  <circle cx="44" cy="43.5" r="2.5" fill="#075342"/>
+</svg>

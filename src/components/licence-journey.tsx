@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { DiscrepancyNote } from "@/components/discrepancy-note";
 import { OfflineReady } from "@/components/offline-ready";
 import {
@@ -67,58 +68,105 @@ export function LicenceJourney() {
     <>
       <header className="masthead">
         <a className="brand" href="#page-title" aria-label="CivicRoute NG home">
-          <span>CR</span>
-          CivicRoute NG
+          <Image src="/civicroute-mark.svg" alt="" width={42} height={42} priority />
+          <span><strong>CivicRoute</strong><small>NG</small></span>
         </a>
-        <a href="#sources-heading">How guidance is verified</a>
+        <nav aria-label="Primary navigation">
+          <a href="#validation">Why this matters</a>
+          <a href="#sources-heading">Verified sources</a>
+          <a className="nav-action" href="#journey-heading">Start journey</a>
+        </nav>
       </header>
+
       <section className="hero" aria-labelledby="page-title">
-        <p className="eyebrow">Transparency & Accountability · Nigeria</p>
-        <h1 id="page-title">When the process goes quiet, find your next verified step.</h1>
-        <p className="lede">
-          CivicRoute NG turns fragmented official guidance into a clear driver’s licence tracking
-          and escalation path—without collecting your personal application data.
-        </p>
-        <div className="trust-strip" aria-label="Trust information">
-          <span>Verified sources</span>
-          <span>Reviewed 20 Sep 2026</span>
-          <span>No personal data collected</span>
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Transparency & Accountability · Nigeria</p>
+          <h1 id="page-title">Your licence journey should never go <em>silent.</em></h1>
+          <p className="lede">
+            Find your next verified step when a Nigerian driver’s licence application stalls—then
+            track, escalate and keep a clear action record without sharing personal data with us.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#journey-heading">Find my next step <span aria-hidden="true">→</span></a>
+            <a className="text-link" href="#sources-heading">See how guidance is verified</a>
+          </div>
+          <div className="trust-strip" aria-label="Trust information">
+            <span>✓ Official sources</span>
+            <span>✓ No personal data collected</span>
+            <span>✓ Offline-ready</span>
+          </div>
+          <OfflineReady />
         </div>
-        <OfflineReady />
+
+        <aside className="hero-status" aria-label="Example application journey">
+          <div className="status-card-top">
+            <div>
+              <span className="mini-label">Journey snapshot</span>
+              <strong>Driver’s licence application</strong>
+            </div>
+            <span className="secure-pill">Private by design</span>
+          </div>
+          <div className="route-visual" aria-hidden="true">
+            <span className="route-node complete">✓</span><span className="route-line complete" />
+            <span className="route-node complete">✓</span><span className="route-line active" />
+            <span className="route-node alert">!</span>
+          </div>
+          <div className="route-labels" aria-hidden="true">
+            <span>Applied</span><span>Captured</span><span>Stalled</span>
+          </div>
+          <div className="status-alert">
+            <span className="alert-icon">!</span>
+            <div><small>Current situation</small><strong>No update after biometric capture</strong></div>
+          </div>
+          <div className="next-step-preview">
+            <small>Verified next step</small>
+            <strong>Check status, then escalate with evidence</strong>
+            <span>Guidance traced to official FRSC sources →</span>
+          </div>
+        </aside>
       </section>
 
-      <ol className="journey-summary" aria-label="How CivicRoute NG works">
-        <li><span>01</span><strong>Describe the blockage</strong><small>No identifiers required</small></li>
-        <li><span>02</span><strong>Follow verified guidance</strong><small>Official sources first</small></li>
-        <li><span>03</span><strong>Keep an action record</strong><small>Escalate with evidence</small></li>
-      </ol>
+      <section className="validation-strip" id="validation" aria-labelledby="validation-heading">
+        <div className="validation-intro">
+          <p className="eyebrow">Applicant signal</p>
+          <h2 id="validation-heading">Built around a documented gap</h2>
+          <p>Early validation with five eligible applicants. Small sample; directional, not nationally representative.</p>
+        </div>
+        <div className="validation-stat"><strong>3<span>/5</span></strong><p>returned to a centre four or more times</p></div>
+        <div className="validation-stat"><strong>3<span>/5</span></strong><p>faced biometric or capture friction</p></div>
+        <div className="validation-stat"><strong>5<span>/5</span></strong><p>wanted traceable handling updates</p></div>
+      </section>
 
       <section className="journey-panel" aria-labelledby="journey-heading">
-        <div className="section-heading">
-          <p className="eyebrow">Journey navigator</p>
-          <h2 id="journey-heading">Where are you, and what went wrong?</h2>
-        </div>
-        <div className="field-grid">
-          <label>
-            Last completed stage
-            <select value={stage} onChange={(event) => setStage(event.target.value as ApplicationStage)}>
-              {stages.map((item) => (
-                <option key={item.value} value={item.value}>{item.label}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Current problem
-            <select value={issue} onChange={(event) => setIssue(event.target.value as JourneyIssue)}>
-              {issues.map((item) => (
-                <option key={item.value} value={item.value}>{item.label}</option>
-              ))}
-            </select>
-          </label>
+        <div className="navigator-form">
+          <div className="section-heading">
+            <p className="eyebrow">Journey navigator</p>
+            <h2 id="journey-heading">Tell us where the process went quiet.</h2>
+            <p>Choose two answers. Do not enter your licence number, application ID or date of birth.</p>
+          </div>
+          <div className="field-grid">
+            <label>
+              <span><b>1</b> Last completed stage</span>
+              <select value={stage} onChange={(event) => setStage(event.target.value as ApplicationStage)}>
+                {stages.map((item) => (
+                  <option key={item.value} value={item.value}>{item.label}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <span><b>2</b> What is happening now?</span>
+              <select value={issue} onChange={(event) => setIssue(event.target.value as JourneyIssue)}>
+                {issues.map((item) => (
+                  <option key={item.value} value={item.value}>{item.label}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="privacy-inline"><span aria-hidden="true">◆</span> Your selections stay on this device.</div>
         </div>
 
         <article className="recommendation" aria-live="polite">
-          <p className="status-pill">Verified guidance</p>
+          <div className="recommendation-top"><p className="status-pill">✓ Verified guidance</p><small>Reviewed 20 Sep 2026</small></div>
           <h3>{recommendation.heading}</h3>
           <ol>
             {recommendation.actions.map((action) => <li key={action}>{action}</li>)}
@@ -126,15 +174,15 @@ export function LicenceJourney() {
           <p className="caution"><strong>Privacy:</strong> {recommendation.caution}</p>
           <div className="actions">
             <a className="primary-action" href="https://pay.nigeriadriverslicence.org/license/trackStatus" target="_blank" rel="noreferrer">
-              Open official status tracker
+              Open official status tracker <span aria-hidden="true">↗</span>
             </a>
-            <button type="button" onClick={() => window.print()}>Print or save action card</button>
-            <button type="button" onClick={copyActionCard}>{copied ? "Action card copied" : "Copy action card"}</button>
+            <button type="button" onClick={copyActionCard}>{copied ? "✓ Action card copied" : "Copy action card"}</button>
+            <button type="button" onClick={() => window.print()}>Print / save</button>
           </div>
         </article>
       </section>
 
-      <section aria-labelledby="channels-heading">
+      <section className="content-section" aria-labelledby="channels-heading">
         <div className="section-heading">
           <p className="eyebrow">Escalation</p>
           <h2 id="channels-heading">Use a verified support channel</h2>
@@ -153,7 +201,7 @@ export function LicenceJourney() {
         </div>
       </section>
 
-      <section aria-labelledby="prepare-heading">
+      <section className="content-section prepare-section" aria-labelledby="prepare-heading">
         <div className="section-heading">
           <p className="eyebrow">Before contacting support</p>
           <h2 id="prepare-heading">Prepare a concise escalation pack</h2>
@@ -171,28 +219,34 @@ export function LicenceJourney() {
 
       <DiscrepancyNote />
 
-      <section aria-labelledby="sources-heading">
-        <div className="section-heading">
+      <section className="sources-section" aria-labelledby="sources-heading">
+        <div className="sources-copy">
           <p className="eyebrow">Evidence register</p>
-          <h2 id="sources-heading">Every material instruction remains traceable</h2>
+          <h2 id="sources-heading">Trust the route because you can inspect the source.</h2>
+          <p>Every material instruction is linked to its official origin and dated for review.</p>
+          <span className="verified-stamp">✓ Current guidance: {driverLicenceGuide.status}</span>
         </div>
-        <div className="source-list">
-          {driverLicenceSources.map((source) => (
-            <article key={source.id}>
-              <div>
-                <h3>{source.title}</h3>
-                <p>{source.issuer} · Human-reviewed 20 September 2026</p>
-              </div>
-              <a href={source.url} target="_blank" rel="noreferrer">View source</a>
-            </article>
-          ))}
-        </div>
-        <p className="source-note">Current status: <strong>{driverLicenceGuide.status}</strong>. No official response-time guarantee was found in the reviewed sources.</p>
+        <details className="source-disclosure">
+          <summary>View all {driverLicenceSources.length} official sources <span>＋</span></summary>
+          <div className="source-list">
+            {driverLicenceSources.map((source) => (
+              <article key={source.id}>
+                <div>
+                  <h3>{source.title}</h3>
+                  <p>{source.issuer} · Reviewed 20 Sep 2026</p>
+                </div>
+                <a href={source.url} target="_blank" rel="noreferrer" aria-label={`View official source: ${source.title}`}>↗</a>
+              </article>
+            ))}
+          </div>
+          <p className="source-note">No official response-time guarantee was found in the reviewed sources.</p>
+        </details>
       </section>
 
       <footer>
-        <strong>CivicRoute NG</strong>
+        <div className="brand footer-brand"><Image src="/civicroute-mark.svg" alt="" width={36} height={36} /><span><strong>CivicRoute</strong><small>NG</small></span></div>
         <p>An independent civic-information prototype. Not affiliated with or endorsed by FRSC.</p>
+        <a href="#page-title">Back to top ↑</a>
       </footer>
     </>
   );
