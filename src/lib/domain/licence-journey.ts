@@ -6,7 +6,12 @@ export type ApplicationStage =
   | "collection"
   | "unknown";
 
-export type JourneyIssue = "cannot_track" | "unclear_status" | "stalled" | "no_response";
+export type JourneyIssue =
+  | "cannot_track"
+  | "unclear_status"
+  | "stalled"
+  | "capture_exception"
+  | "no_response";
 
 export type JourneyRecommendation = {
   heading: string;
@@ -47,6 +52,21 @@ export function recommendLicenceJourney(
     };
   }
 
+  if (issue === "capture_exception") {
+    return {
+      heading: "Record the capture exception and request a written next step",
+      actions: [
+        "Record the capture centre, date, and the neutral reason staff gave for the failed or disputed capture.",
+        "Ask the centre to identify the next official step without posting biometric or identity information publicly.",
+        "Use the platform support form if the exception remains unresolved.",
+        "If support does not resolve it, use the FRSC complaints channel or the official centre directory.",
+      ],
+      channelIds: ["support-form", "frsc-feedback", "licence-centre"],
+      caution:
+        "This guide does not diagnose the cause of a biometric or identity mismatch. Keep facial images and identity documents out of public reports.",
+    };
+  }
+
   const stageLabel = stage === "unknown" ? "current processing" : stage;
   return {
     heading: issue === "stalled" ? "Document the stalled stage before escalating" : "Clarify the status with support",
@@ -60,4 +80,3 @@ export function recommendLicenceJourney(
     caution: "Share application details only through official channels, not in public posts or screenshots.",
   };
 }
-

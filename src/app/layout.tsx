@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nigeria Driver's Licence Journey",
+  title: "CivicRoute NG — Verified driver's licence guidance",
   description: "Verified tracking and escalation guidance for Nigeria driver's licence applicants.",
   manifest: "/manifest.webmanifest",
 };

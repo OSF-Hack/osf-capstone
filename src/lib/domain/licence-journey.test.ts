@@ -18,5 +18,11 @@ describe("recommendLicenceJourney", () => {
     const result = recommendLicenceJourney("biometrics", "stalled");
     expect(result.actions[0]).toContain("biometrics");
   });
-});
 
+  it("handles capture exceptions without inventing a diagnosis", () => {
+    const result = recommendLicenceJourney("biometrics", "capture_exception");
+    expect(result.heading).toContain("capture exception");
+    expect(result.caution).toContain("does not diagnose");
+    expect(result.channelIds).toContain("support-form");
+  });
+});

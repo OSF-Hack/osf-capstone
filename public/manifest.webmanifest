@@ -1,6 +1,6 @@
 {
-  "name": "Nigeria Driver's Licence Journey",
-  "short_name": "Licence Journey",
+  "name": "CivicRoute NG",
+  "short_name": "CivicRoute",
   "description": "Verified tracking and escalation guidance for Nigeria driver's licence applicants.",
   "start_url": "/",
   "display": "standalone",

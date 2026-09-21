@@ -1,4 +1,4 @@
-# Nigeria Driver's Licence Journey
+# CivicRoute NG
 
 A trustworthy, actionable civic-information proof of concept in the **Transparency & Accountability** track.
 
@@ -6,7 +6,17 @@ A trustworthy, actionable civic-information proof of concept in the **Transparen
 
 The first service pack addresses a participant-observed problem in Nigeria's federal driver's licence process: applicants may not know how to track an application or escalate when tracking is unavailable, unclear, or stalled.
 
-The proof of concept does not replace FRSC systems or collect application identifiers. It routes applicants to official services, explains what to prepare, and exposes verified escalation channels with source provenance.
+The proof of concept does not replace FRSC systems or collect application identifiers. It routes applicants to official services, explains what to prepare, exposes verified escalation channels with source provenance, and helps applicants retain a privacy-safe action record.
+
+## Golden journey
+
+1. Describe the last completed processing stage and current blockage.
+2. Receive evidence-backed guidance and open the official status tracker.
+3. Use a verified escalation channel when tracking does not resolve the problem.
+4. Print or copy a privacy-safe action card.
+5. Record a mismatch between published guidance and lived experience without uploading personal information.
+
+After the first successful visit, the service worker retains the application shell and previously loaded same-origin assets for low-connectivity use. External official services still require a connection.
 
 ## Trust commitments
 
@@ -15,7 +25,7 @@ The proof of concept does not replace FRSC systems or collect application identi
 - Conflicting evidence is displayed, not silently resolved by AI.
 - Missing evidence produces an unverified state.
 - AI may simplify or translate evidence but cannot invent civic instructions.
-- Anonymous discrepancy reporting will minimise personal data.
+- The discrepancy-note pilot runs locally and does not upload or store a report.
 
 ## Local setup
 

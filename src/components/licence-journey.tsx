@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { DiscrepancyNote } from "@/components/discrepancy-note";
+import { OfflineReady } from "@/components/offline-ready";
 import {
   driverLicenceEscalationChannels,
   driverLicenceGuide,
@@ -25,6 +27,7 @@ const issues: Array<{ value: JourneyIssue; label: string }> = [
   { value: "cannot_track", label: "I cannot locate or use tracking" },
   { value: "unclear_status", label: "The status is unclear" },
   { value: "stalled", label: "The application appears stalled" },
+  { value: "capture_exception", label: "Biometric capture or identity details were rejected" },
   { value: "no_response", label: "Support has not responded" },
 ];
 
@@ -41,22 +44,54 @@ export function LicenceJourney() {
   const channels = driverLicenceEscalationChannels.filter((channel) =>
     recommendation.channelIds.includes(channel.id),
   );
+  const stageLabel = stages.find((item) => item.value === stage)?.label ?? stage;
+  const issueLabel = issues.find((item) => item.value === issue)?.label ?? issue;
+  const [copied, setCopied] = useState(false);
+
+  async function copyActionCard() {
+    const card = [
+      "CivicRoute NG — verified driver's licence action card",
+      `Last completed stage: ${stageLabel}`,
+      `Problem: ${issueLabel}`,
+      recommendation.heading,
+      ...recommendation.actions.map((action, index) => `${index + 1}. ${action}`),
+      `Privacy: ${recommendation.caution}`,
+      "Verify current guidance through the official sources listed in CivicRoute NG.",
+    ].join("\n");
+    await navigator.clipboard.writeText(card);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <>
+      <header className="masthead">
+        <a className="brand" href="#page-title" aria-label="CivicRoute NG home">
+          <span>CR</span>
+          CivicRoute NG
+        </a>
+        <a href="#sources-heading">How guidance is verified</a>
+      </header>
       <section className="hero" aria-labelledby="page-title">
         <p className="eyebrow">Transparency & Accountability · Nigeria</p>
-        <h1 id="page-title">Find the next verified step in your driver’s licence journey.</h1>
+        <h1 id="page-title">When the process goes quiet, find your next verified step.</h1>
         <p className="lede">
-          Use official tracking first. If it fails or the status remains unclear, prepare a safer,
-          evidence-backed escalation without giving this prototype your personal application data.
+          CivicRoute NG turns fragmented official guidance into a clear driver’s licence tracking
+          and escalation path—without collecting your personal application data.
         </p>
         <div className="trust-strip" aria-label="Trust information">
           <span>Verified sources</span>
-          <span>Reviewed 16 Sep 2026</span>
+          <span>Reviewed 20 Sep 2026</span>
           <span>No personal data collected</span>
         </div>
+        <OfflineReady />
       </section>
+
+      <ol className="journey-summary" aria-label="How CivicRoute NG works">
+        <li><span>01</span><strong>Describe the blockage</strong><small>No identifiers required</small></li>
+        <li><span>02</span><strong>Follow verified guidance</strong><small>Official sources first</small></li>
+        <li><span>03</span><strong>Keep an action record</strong><small>Escalate with evidence</small></li>
+      </ol>
 
       <section className="journey-panel" aria-labelledby="journey-heading">
         <div className="section-heading">
@@ -94,6 +129,7 @@ export function LicenceJourney() {
               Open official status tracker
             </a>
             <button type="button" onClick={() => window.print()}>Print or save action card</button>
+            <button type="button" onClick={copyActionCard}>{copied ? "Action card copied" : "Copy action card"}</button>
           </div>
         </article>
       </section>
@@ -133,6 +169,8 @@ export function LicenceJourney() {
         <p className="privacy-note">Keep these details private. Submit them only through an official channel.</p>
       </section>
 
+      <DiscrepancyNote />
+
       <section aria-labelledby="sources-heading">
         <div className="section-heading">
           <p className="eyebrow">Evidence register</p>
@@ -143,7 +181,7 @@ export function LicenceJourney() {
             <article key={source.id}>
               <div>
                 <h3>{source.title}</h3>
-                <p>{source.issuer} · Reviewed 16 September 2026</p>
+                <p>{source.issuer} · Human-reviewed 20 September 2026</p>
               </div>
               <a href={source.url} target="_blank" rel="noreferrer">View source</a>
             </article>
@@ -151,7 +189,11 @@ export function LicenceJourney() {
         </div>
         <p className="source-note">Current status: <strong>{driverLicenceGuide.status}</strong>. No official response-time guarantee was found in the reviewed sources.</p>
       </section>
+
+      <footer>
+        <strong>CivicRoute NG</strong>
+        <p>An independent civic-information prototype. Not affiliated with or endorsed by FRSC.</p>
+      </footer>
     </>
   );
 }
-
